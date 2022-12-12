@@ -7,4 +7,5 @@ int main(void)
 
     /* buf[0 - 18] */
     fprintf(psFile, "Maxwell and Melody");
+    return 0;
 }
