@@ -16,7 +16,7 @@ int main(void)
     fprintf(psFile, "fillerfillerfillerfillerfille");
     /* buf[48-55] (x30) */
     fwrite(&ulData, sizeof(unsigned long), 1, psFile);
-    /* buf[56] (x30) */
+    /* buf[56] (newline in unused memory) */
     fprintf(psFile, "%c", '\n');
     return 0;
 }
