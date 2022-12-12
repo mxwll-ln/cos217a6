@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-void main()
+int main(void)
 {
     FILE *psFile;
     psFile = fopen("data", "w");
 
-    fprintf(psFile, "Maxwell and Melody");  // buf[0 - 18]
+    /* buf[0 - 18] */
+    fprintf(psFile, "Maxwell and Melody");
 }
