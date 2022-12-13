@@ -24,7 +24,7 @@ int main(void)
     /* buf[24-27] */
     fwrite(&uiData3, sizeof(unsigned int), 1, psFile);
     /* buf[28-47] */
-    fprintf(psFile, "fillerfillerfillerf");
+    fprintf(psFile, "fillerfillerfillerfi");
     /* buf[48-55] (x30) */
     fwrite(&ulData1, sizeof(unsigned long), 1, psFile);
     /* buf[56] (newline in unused memory) */
