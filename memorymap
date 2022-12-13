@@ -170,9 +170,9 @@ Address (in hex)    Description     Intended Content ("A" attack)	Intended Conte
 0x420082            name[42]										'd'
 0x420083            name[43]										'e'
 0x420084            name[44]										'.'
-0x420085            name[45]										'%c'
-0x420086            name[46]										'\0'
-0x420087            name[47]										
+0x420085            name[45]										'%'
+0x420086            name[46]										'c'
+0x420087            name[47]										'\0'
 
 
 
