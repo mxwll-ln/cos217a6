@@ -24,15 +24,15 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
 
    /* create bitmask */
    bitmask = 1;
-   bitmask << uiNumBits;
+   bitmask = bitmask << uiNumBits;
    bitmask--;
 
    /* isolate source copy bits */
-   bitmask << uiSrcStartBit;
+   bitmask = bitmask << uiSrcStartBit;
    intermediate = uiSrc & bitmask;
 
    /* shift bits on top of destination target */
-   intermediate << (uiDestStartBit - uiSrcStartBit);
+   intermediate = intermediate << (uiDestStartBit - uiSrcStartBit);
 
    /* set destination target bits */
    *puiDest = *puiDest | intermediate;
