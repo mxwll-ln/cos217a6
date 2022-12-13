@@ -104,6 +104,10 @@ unsigned int MiniAssembler_strb(unsigned int uiFromReg,
    /* Base Instruction Code (0011 1001 00--)*/
    uiInstr = 0x39000000;
 
+   setField(uiFromReg, 0, &uiInstr, 0, 5);
+   setField(uiToReg, 0, &uiInstr, 5, 10);
+
+   return uiInstr;
 }
 
 /*--------------------------------------------------------------------*/
