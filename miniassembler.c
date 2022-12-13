@@ -45,9 +45,9 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
 =
 000000000010110000000 selected source bits
 
-<< >>
+<< >> align 
 
-||
+|
 010101111101001010101 dest
 =
 010101111111111010101 final
@@ -123,7 +123,7 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 
    /* displacement to target instruction from this instruction */
    uiDisp = (unsigned int)(ulAddr - ulAddrOfThisInstr);
-
+   printf(uiDisp);
    setField(uiDisp, 2, &uiInstr, 0, 26);
 
    return uiInstr;
