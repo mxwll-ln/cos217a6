@@ -145,7 +145,7 @@ Address (in hex)    Description     Intended Content ("A" attack)	Intended Conte
 0x420069            name[17]        'y' 							'y'
 0x42006a            name[18]        '\0' 							'\0'
 0x42006b            name[19]        
-0x42006c            name[20]        mov w1, #0x41 /* #65 "A" */		adr x1, 0x420074 /* location of new string */
+0x42006c            name[20]        mov w1, #0x41 /* #65 "A" */		adr x0, 0x420074 /* location of new string */
 0x42006d            name[21]        ||								||
 0x42006e            name[22]        ||								||
 0x42006f            name[23]        ||								||
