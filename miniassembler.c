@@ -119,12 +119,12 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
    unsigned int uiInstr;
    unsigned int uiDisp;
 
-   /* Base Instruction Code (0001 01--)*/
+   /* Base Instruction Code */
    uiInstr = 0x14000000;
 
-   /* displacement to target instruction from this instruction */
+   /* displacement to be split into immlo and immhi and inserted */
    uiDisp = (unsigned int)(ulAddr - ulAddrOfThisInstr);
-   
+
    setField(uiDisp, 2, &uiInstr, 0, 26);
 
    return uiInstr;
