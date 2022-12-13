@@ -19,14 +19,39 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
                      unsigned int *puiDest, unsigned int uiDestStartBit,
                      unsigned int uiNumBits)
 {
-   int i;
+   int bitmask;
+   int intermediate;
 
-   for (int i = 0; i < uiNumBits; i++)
-   {
-      *(puiDest + uiDestStartBit + i) = *(&uiSrc + uiSrcStartBit + i);
-   }
+   /* create bitmask */
+   bitmask = 1;
+   bitmask << uiNumBits;
+   bitmask--;
+
+   /* isolate source copy bits */
+   bitmask << uiSrcStartBit;
+   intermediate = uiSrc & bitmask;
+
+   /* shift bits on top of destination target */
+   intermediate << (uiDestStartBit - uiSrcStartBit);
+
+   /* set destination target bits */
+   *puiDest = *puiDest | intermediate;
 }
 
+/*
+001001010110111111010 source
+&
+000000000011110000000 mask
+=
+000000000010110000000 selected source bits
+
+<< >>
+
+||
+010101111101001010101 dest
+=
+010101111111111010101 final
+*/
 /*--------------------------------------------------------------------*/
 
 unsigned int MiniAssembler_mov(unsigned int uiReg, int iImmed)
