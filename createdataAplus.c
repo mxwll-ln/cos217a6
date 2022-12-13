@@ -26,8 +26,9 @@ int main(void)
     fwrite(&uiData3, sizeof(unsigned int), 1, psFile);
     /* buf[24-27] */
     fwrite(&uiData4, sizeof(unsigned int), 1, psFile);
-    /* buf[28-46] */
-    fprintf(psFile, "A+ is your grade.\%c");
+    /* buf[28-47] */
+    fprintf(psFile, "A+ is your grade.%");
+    fprintf(psFile, "%c", 'c');
     /* buf[47] */
     fprintf(psFile, "%c", '\0');
     /* buf[48-55] (x30) */
