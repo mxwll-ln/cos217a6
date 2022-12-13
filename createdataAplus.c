@@ -9,7 +9,7 @@ int main(void)
     unsigned int uiData4;
 
     ulData1 = 0x420068; /* address to the instructions below; */
-    uiData2 = 0xD28001E1; /* mov x1, #0x0A */
+    uiData2 = 0x528001E1; /* mov w1, #0x0A */
     uiData3 = 0x10000040; /* adr x0, 0x420074 */
     uiData4 = 0x17FF8201; /* b 0x400874 */
 
