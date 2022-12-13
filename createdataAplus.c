@@ -8,9 +8,8 @@ int main(void)
     unsigned int uiData3;
 
     ulData1 = 0x42006c; /* address to the instructions below; */
-    uiData2 = 0x52800821; /* mov w1, #0x41 */
-    /* uiData2 = 0x10000040; /* adr x0, 0x420074 */
-    uiData3 = 0x17FF81FB; /* b 0x40085c */
+    uiData2 = 0x10000040; /* adr x0, 0x420074 */
+    uiData3 = 0x17FF8201; /* b 0x400874 */
 
     psFile = fopen("dataAplus", "w");
 
