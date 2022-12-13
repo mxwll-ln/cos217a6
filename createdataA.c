@@ -4,12 +4,12 @@ int main(void)
 {
     FILE *psFile;
     unsigned long ulData1;
-    unsigned long ulData2;
-    unsigned long ulData3;
+    unsigned int uiData2;
+    unsigned int uiData3;
 
     ulData1 = 0x42006c; /* address to the instructions below; */
-    ulData2 = 0x52800821; /* mov w1, #0x41 */
-    ulData3 = 0x17FF81FB; /* b 0x40085c */
+    uiData2 = 0x52800821; /* mov w1, #0x41 */
+    uiData3 = 0x17FF81FB; /* b 0x40085c */
 
     psFile = fopen("dataA", "w");
 
@@ -19,12 +19,12 @@ int main(void)
     fprintf(psFile, "%c", '\0');
     /* buf[19] */
     fprintf(psFile, "%c", '\0');
-    /* buf[20-27] */
-    fwrite(&ulData2, sizeof(unsigned long), 1, psFile);
-    /* buf[28-35] */
-    fwrite(&ulData3, sizeof(unsigned long), 1, psFile);
-    /* buf[36-47] */
-    fprintf(psFile, "fillerfille");
+    /* buf[20-23] */
+    fwrite(&uiData2, sizeof(unsigned int), 1, psFile);
+    /* buf[24-27] */
+    fwrite(&uiData3, sizeof(unsigned int), 1, psFile);
+    /* buf[28-47] */
+    fprintf(psFile, "fillerfillerfillerf");
     /* buf[48-55] (x30) */
     fwrite(&ulData1, sizeof(unsigned long), 1, psFile);
     /* buf[56] (newline in unused memory) */
