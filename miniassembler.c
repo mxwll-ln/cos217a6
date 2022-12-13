@@ -124,7 +124,7 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 
    /* displacement to target instruction from this instruction */
    uiDisp = (unsigned int)(ulAddr - ulAddrOfThisInstr);
-   printf("%x", uiDisp);
+   
    setField(uiDisp, 2, &uiInstr, 0, 26);
 
    return uiInstr;
