@@ -149,7 +149,7 @@ Address (in hex)    Description     Intended Content ("A" attack)	Intended Conte
 0x42006d            name[21]        ||								||
 0x42006e            name[22]        ||								||
 0x42006f            name[23]        ||								||
-0x420070            name[24]        b 0x40085c /* return to	*/		b 0x400874 /* return to before printf call */
+0x420070            name[24]        b 0x40085c /* return to	*/		b 0x400874 /* return to before first printf call */
 0x420071            name[25]        || /* grade = 'B' past	*/		||
 0x420072            name[26]        || /* the intended mov	*/		||
 0x420073            name[27]        || /* instruction		*/		||
