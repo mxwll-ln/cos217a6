@@ -11,7 +11,8 @@
    output whose format is indistinguishable from normal output, with 
    the exception that the grade 'D' is changed to "A+".
 
-   Outputs to file dataAplus (if file does not exist, creates it). */
+   Outputs to file dataAplus (if file does not exist, creates it). 
+   Returns 0. */
 
 int main(void)
 {

@@ -11,7 +11,8 @@
    output whose format is indistinguishable from normal output, with 
    the exception that the grade 'D' is changed to 'A'.
 
-   Outputs to file dataA (if file does not exist, creates it). */
+   Outputs to file dataA (if file does not exist, creates it). 
+   Returns 0. */
 
 int main(void)
 {
@@ -47,6 +48,6 @@ int main(void)
       
       >runs the command "mov w1 'A'"
       >branches to the code just past "mov w1 'B'"
-      
+
       thus setting grade = 'A'. */
 }
