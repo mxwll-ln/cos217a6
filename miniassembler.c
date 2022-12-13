@@ -6,6 +6,7 @@
 #include "miniassembler.h"
 #include <assert.h>
 #include <stddef.h>
+#include <stdio.h>
 
 /*--------------------------------------------------------------------*/
 /* Modify *puiDest in place,
