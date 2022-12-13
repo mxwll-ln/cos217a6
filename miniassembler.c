@@ -52,6 +52,7 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
 =
 010101111111111010101 final
 */
+
 /*--------------------------------------------------------------------*/
 
 unsigned int MiniAssembler_mov(unsigned int uiReg, int iImmed)
