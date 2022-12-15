@@ -61,7 +61,7 @@ unsigned int MiniAssembler_mov(unsigned int uiReg, int iImmed)
 {
    unsigned int uiInstr;
 
-   /* Base Instruction Code (0101 0010 1---)*/
+   /* Base Instruction Code (0101 0010 1---) */
    uiInstr = 0x52800000;
 
    /* register to be inserted in instruction */
@@ -103,7 +103,7 @@ unsigned int MiniAssembler_strb(unsigned int uiFromReg,
 {
    unsigned int uiInstr;
 
-   /* Base Instruction Code (0011 1001 00--)*/
+   /* Base Instruction Code (0011 1001 00--) */
    uiInstr = 0x39000000;
 
    setField(uiFromReg, 0, &uiInstr, 0, 5);
@@ -120,10 +120,10 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
    unsigned int uiInstr;
    unsigned int uiDisp;
 
-   /* Base Instruction Code */
+   /* Base Instruction Code (0001 01--) */
    uiInstr = 0x14000000;
 
-   /* THis one is still weird for some reason */
+   /* displacement to target instruction */
    uiDisp = (unsigned int)(ulAddr - ulAddrOfThisInstr);
    setField(uiDisp, 2, &uiInstr, 0, 26);
 
