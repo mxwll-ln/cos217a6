@@ -120,7 +120,7 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
    unsigned int uiDisp;
 
    /* Base Instruction Code */
-   // uiInstr = 0x14000000;
+   /* uiInstr = 0x14000000; */
    uiInstr = 0x00000005;
 
    /* displacement to be split into immlo and immhi and inserted */
