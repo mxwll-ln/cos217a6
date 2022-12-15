@@ -124,8 +124,8 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 
    /* displacement to be split into immlo and immhi and inserted */
    uiDisp = (unsigned int)(ulAddr - ulAddrOfThisInstr);
-   printf("%x\n", uiDisp);
-   setField(uiDisp, 2, &uiInstr, 0, 26);
+   uiDisp = uiDisp >> 2;
+   setField(uiInstr, 2, &uiDisp, 27, 6);
 
-   return uiInstr;
+   return uiDisp;
 }
