@@ -33,7 +33,8 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
    intermediate = uiSrc & bitmask;
 
    /* shift bits on top of destination target */
-   intermediate = intermediate << (uiDestStartBit - uiSrcStartBit);
+   intermediate = intermediate >> uiSrcStartBit;
+   intermediate = intermediate << uiDestStartBit;
 
    /* set destination target bits */
    *puiDest = *puiDest | intermediate;
