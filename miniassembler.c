@@ -124,8 +124,7 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 
    /* THis one is still weird for some reason */
    uiDisp = (unsigned int)(ulAddr - ulAddrOfThisInstr);
-   uiDisp = uiDisp >> 2;
-   setField(uiDisp, 0, &uiInstr, 0, 26);
+   setField(uiDisp, 2, &uiInstr, 0, 26);
 
    return uiInstr;
 }
